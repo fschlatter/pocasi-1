@@ -8,7 +8,7 @@
         $pole = array('Id', 'Jméno', "Zkratka");  
         $table->setHeading($pole);
         foreach ($bundesland as $row) {
-            $table->addRow($row['id'], $row['name'], $row['short_name']);
+            $table->addRow($row['id'], anchor("zeme/".$row['id'],$row['name']), $row['short_name']);
         }
         
         $template = [

@@ -16,4 +16,8 @@ class Pocasi extends BaseController
         $dataBL["bundesland"] = $this->bundesland->findAll();
         echo view('index',$dataBL);
     }
+    public function zeme($id){
+        $dataBL = $this->bundesland->find($id);
+        echo view('zeme',$dataBL);
+    }
 }
