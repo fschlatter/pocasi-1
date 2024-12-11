@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <?= $this->include("layout/css");?> 
+    <?= $this->include("layout/js");?>
 </head>
 <body>
     <div class="container-fluid">
         <?= $this->renderSection("content");?>
-        <?= $this->include("layout/js");?>
     </div>
 </body>
 </html>

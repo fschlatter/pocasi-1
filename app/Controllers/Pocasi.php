@@ -2,10 +2,18 @@
 
 namespace App\Controllers;
 
+use App\Models\Zeme;
+
 class Pocasi extends BaseController
 {
-    public function index(): string
+    var $bundesland;
+    public function __construct()
+        {
+            $this->bundesland = new Zeme();
+        }
+    public function index()
     {
-        return view('index');
+        $dataBL["bundesland"] = $this->bundesland->findAll();
+        echo view('index',$dataBL);
     }
 }
