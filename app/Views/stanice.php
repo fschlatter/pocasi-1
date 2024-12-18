@@ -7,10 +7,10 @@ use CodeIgniter\View\Table; ?>
         <h1>Stanice</h1>
         <?php
         $table = new Table();
-        $pole = array('Stanice', 'Datum', 'Teplota prumer', 'Vlhkost', 'Tlak', 'Vítr', 'Srážky');
+        $pole = array('Id', 'Datum', 'Teplota prumer', 'Vlhkost', 'Tlak', 'Vítr', 'Srážky');
         $table->setHeading($pole);
         foreach ($data as $row) {
-            $table->addRow($row['id'], $row['date'], $row['mid_2m'], $row['humidity'], $row['mid_aid_pressure'], $row['mid_wind'], $row['precipitation']);
+            $table->addRow($row['id'], $row['date'], $row['mid_2m'], $row['humidity'], $row['mid_air_pressure'], $row['mid_wind'], $row['precipitation']);
         }
         $template = [
             'table_open' => '<table class="table table-bordered">',

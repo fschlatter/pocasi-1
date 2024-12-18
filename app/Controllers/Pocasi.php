@@ -19,7 +19,7 @@ class Pocasi extends BaseController
     }
     public function index()
     {
-        $dataBL["bundesland"] = $this->bundesland->findAll();
+        $dataBL["bundesland"] = $this->bundesland->orderBy("name", 'ASC')->findAll();
         echo view('index',$dataBL);
     }
     public function zeme($id){
@@ -27,7 +27,7 @@ class Pocasi extends BaseController
         echo view('zeme',$dataST);
     }
     public function stanice($id){
-        $dataS["data"] = $this->stations->where('S_ID',$id)->findAll();
+        $dataS["data"] = $this->sData->where('Stations_ID',$id)->orderBy('date','DESC')->findAll();
         echo view('stanice',$dataS);
     }
 }
