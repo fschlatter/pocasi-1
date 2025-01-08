@@ -2,13 +2,25 @@
 <?php $this->section("content") ?>
 <h1>Seznam zemí</h1>
 <div class="row">
+    
     <div class="col-6">
         <?php use App\Models\Zeme;
+        
         $table = new \CodeIgniter\View\Table();
         $pole = array('Id', 'Jméno', "Zkratka");  
         $table->setHeading($pole);
         foreach ($bundesland as $row) {
-            $table->addRow($row['id'], anchor("zeme/".$row['id'],$row['name']), $row['short_name']);
+            $img1 = array(
+                "src" => base_url("obrazky/mapy/".$row['map']),
+                "alt" => "mapa ".$row['name'],
+                "class" => "img-fluid perfect-size mx-auto"
+            );
+            $img2 = array(
+                "src" => base_url("obrazky/vlajky/".$row['flag']),
+                "alt" => "mapa ".$row['name'],
+                "class" => "img-fluid perfect-size  mx-auto"
+            );
+            $table->addRow($row['id'], anchor("zeme/".$row['id'],$row['name']), $row['short_name'], img($img1), img($img2));
         }
         
         $template = [
