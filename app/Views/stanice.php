@@ -10,8 +10,7 @@ use CodeIgniter\View\Table; ?>
         $pole = array('Id', 'Datum', 'Teplota prumer', 'Vlhkost', 'Tlak', 'Vítr', 'Srážky');
         $table->setHeading($pole);
         foreach ($data as $row) {
-            $date = strtotime($row->date);
-            $date = date("j.n.Y", $date);
+            $date = date("j.n.Y",strtotime($row['date']));
             $table->addRow($row['id'], $date, $row['mid_2m'], $row['humidity'], $row['mid_air_pressure'], $row['mid_wind'], $row['precipitation']);
         }
         $template = [

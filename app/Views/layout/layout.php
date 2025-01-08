@@ -8,6 +8,7 @@
     <?= $this->include("layout/js");?>
 </head>
 <body>
+    <?= $this->include("layout/navbar");?>
     <div class="container-fluid align-content-center">
         <?= $this->renderSection("content");?>
     </div>
