@@ -30,4 +30,8 @@ class Pocasi extends BaseController
         $dataS["data"] = $this->sData->where('Stations_ID',$id)->orderBy('date','DESC')->findAll();
         echo view('stanice',$dataS);
     }
+    public function staniceAll(){
+        $dataST["stanice"] = $this->stations->findAll();
+        echo view('staniceAll',$dataST);
+    }
 }

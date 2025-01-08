@@ -1,7 +1,7 @@
 <?php $this->extend("layout/layout")  ?>
 <?php $this->section("content") ?>
     <?php use App\Models\Stanice; ?>
-    <div class="row">
+    <div class="row justify-content-center">
     <?php foreach ($stanice as $row): ?> 
         <div class="card col-12 col-md-6 col-lg-4 m-1">
             <div class="card-body">
