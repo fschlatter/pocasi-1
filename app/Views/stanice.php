@@ -1,11 +1,13 @@
 <?php $this->extend("layout/layout")?>
-<?php $this->section("content");
-use App\Models\SData;
-use CodeIgniter\View\Table; ?>
+<?php $this->section("content"); ?>
+
+
+
 <div class="row">
     <div class="col-12">
         <h1>Stanice</h1>
         <?php
+        use CodeIgniter\View\Table;
         $table = new Table();
         $pole = array('Id', 'Datum', 'Teplota prumer', 'Vlhkost', 'Tlak', 'Vítr', 'Srážky');
         $table->setHeading($pole);
@@ -40,8 +42,8 @@ use CodeIgniter\View\Table; ?>
             'table_close' => '</table>',
         ];
         $table->setTemplate($template);
-        echo $table->generate();
-        ?>
+        echo $table->generate();?>
+        <div class="d-flex align-items-center justify-content-center"><?= $pager[0]->links();?></div>
     </div>
 
 <?php $this->endsection()?>

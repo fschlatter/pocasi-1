@@ -27,11 +27,18 @@ class Pocasi extends BaseController
         echo view('zeme',$dataST);
     }
     public function stanice($id){
-        $dataS["data"] = $this->sData->where('Stations_ID',$id)->orderBy('date','DESC')->findAll();
+        $dataS["data"] = $this->sData->where('Stations_ID',$id)->orderBy('date','DESC')->paginate(25);
+        $pager[] = $this->sData->pager;
+        $dataS["pager"] = $pager;
         echo view('stanice',$dataS);
     }
     public function staniceAll(){
-        $dataST["stanice"] = $this->stations->findAll();
-        echo view('staniceAll',$dataST);
+        $data["damik"] = $this->stations->join('pocasi_bundesland','pocasi_bundesland.id=pocasi_station.bundesland','inner')->orderBy('place')->findAll();
+        echo view('staniceAll', $data);
+    }
+
+    public function zemeInfo($id){
+        $dataBL["bundesland"] = $this->bundesland->find($id);
+        echo view('zemeInfo',$dataBL);
     }
 }
