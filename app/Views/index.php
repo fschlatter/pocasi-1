@@ -7,7 +7,7 @@
         <?php use App\Models\Zeme;
         
         $table = new \CodeIgniter\View\Table();
-        $pole = array('Id', 'Jméno', "Zkratka", "Info");  
+        $pole = array('Id', 'Jméno', "Zkratka", "Info");
         $table->setHeading($pole);
         foreach ($bundesland as $row) {
 

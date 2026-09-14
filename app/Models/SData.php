@@ -10,9 +10,9 @@ class SData extends Model
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
-    protected $useSoftDeletes   = false;
+    protected $useSoftDeletes   = true;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = ['Stations_ID', 'date', 'mid_2m', 'humidity', 'mid_air_pressure', 'mid_wind', 'precipitation'];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;

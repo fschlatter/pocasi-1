@@ -1,8 +1,8 @@
 <?php $this->extend("layout/layout")  ?>
 <?php $this->section("content") ?>
-    <div class="row justify-content-center">
+    <div class="row justify-content-center p-5">
     <?php foreach ($stanice as $row): ?> 
-        <div class="card col-12 col-md-6 col-lg-4 m-1">
+        <div class="card col-12 col-md-5 col-lg-3 m-1">
             <div class="card-body">
                 <h5 class="card-title"><?php echo anchor("stanice/".$row['S_ID'],$row['place']); ?></h5>
                 <p class="card-text">Elevation: <?php echo $row['height'];?>m n. m.</p>

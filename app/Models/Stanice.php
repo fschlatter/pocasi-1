@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class Stanice extends Model
 {
     protected $table            = 'pocasi_station';
-    protected $primaryKey       = 'id';
+    protected $primaryKey       = 'S_ID';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
