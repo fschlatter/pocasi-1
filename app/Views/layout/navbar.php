@@ -13,6 +13,9 @@
         <a class="nav-link" href="<?= base_url("index.php/staniceAll")?>">Alle Stationen</a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="<?= base_url("index.php/earthquakes")?>">Erdbeben</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="<?= base_url("index.php/mazani")?>">Mazání dat</a>
       </li>
     </ul>

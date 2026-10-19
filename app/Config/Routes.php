@@ -12,3 +12,4 @@ $routes->get('staniceAll', 'Pocasi::staniceAll');
 $routes->get('zemeInfo/(:num)','Pocasi::zemeInfo/$1');
 $routes->get('mazani', 'Pocasi::mazani');
 $routes->post('mazani', 'Pocasi::mazaniSmazat', ['filter' => 'csrf']);
+$routes->get('earthquakes', 'Pocasi::earthquakes');

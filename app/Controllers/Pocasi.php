@@ -108,4 +108,8 @@ class Pocasi extends BaseController
             "Smazáno (soft delete) {$count} záznam(ů) pro stanici \"{$label}\", {$month}/{$year}."
         );
     }
+    public function earthquakes()
+    {
+        return view('earthquakes');
+    }
 }
